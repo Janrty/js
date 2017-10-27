@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='index.js'></script>
+</head>
+<body>
+	<div class="one">
+		<div class="box"></div>
+	</div>
+	<div class="box">123</div>
+	<div class="box box1">123</div>
+	<div id="boxid">123</div>
+	<!-- <div class="box"></div> -->
+</body>
+<script>
+window.onload=function(){
+	let one=getClass('one');
+	var box =getClass('box',one[0]);
+	console.log(box)
+	box[0].innerHTML='HELLO';
+	// box[1].innerHTML='Hello Word !';
+    console.log($('#boxid'));
+	$('#boxid').innerHTML='this is for everyone';
+	console.log($('.box'));
+	$('.box')[0].innerHTML='1111';
+	$('.box')[1].innerHTML='2222';
+	$('.box')[2].innerHTML='3333';
+	console.log($("div"))
+}
+
+
+</script>
+</html>

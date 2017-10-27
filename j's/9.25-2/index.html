@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+
+    </head>
+    <style type="text/css">
+       .big{
+        width: 300px;
+        height: 200px;
+        /*background: red; */
+        float: right;
+        margin-left: 50px;
+        position: relative;
+        overflow: hidden;
+       }
+       .big>img{
+        width: 600px;
+        height: 400px;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top:0;
+       }
+       .small{
+        width: 300px;
+        height: 200px;
+        float: right;
+        margin-left: 50px;
+        position: relative;
+        /*overflow: hidden;*/
+        
+       }
+       .small>img{
+        width: 100%;
+        height: 100%;
+        display: block;
+       }
+       .zezhao1{
+        width: 300px;
+        height: 200px;
+        background: rgba(0,0,0,0.2);
+        position: absolute;
+        left:0;
+        top:0;
+       }
+       .zezhao2{
+        width: 150px;
+        height: 100px;
+        background: rgba(0,0,0,0.4);
+        position: absolute;
+        z-index: 9;
+        left:0;
+        top:0;
+       }
+    </style>
+    <body>
+        <div class="big">
+            <img src="2.jpeg">
+        </div>
+        <div class="small">
+            <img src="2.jpeg">
+            <div class="zezhao1"></div>
+            <div class="zezhao2"></div>
+        </div>
+    <script type="text/javascript">
+     let bigs=document.querySelector("div.big");
+     let smalls=document.querySelector("div.small");
+     let bimg=document.querySelector("img",bigs);
+
+     let bili=bimg.offsetWidth/smalls.offsetWidth;
+     let zezhao1=document.querySelector("div.zezhao1");
+     let zezhao2=document.querySelector("div.zezhao2");
+     // console.log(zezhao1)
+     let sw=zezhao1.offsetWidth;
+     let sh=zezhao1.offsetHeight;
+     let bw=bimg.offsetWidth;
+     let bh=bimg.offsetHeight;
+     let aw=zezhao2.offsetWidth;
+     let ah=zezhao2.offsetHeight;
+
+     zezhao1.addEventListener("mousemove",function(e){
+      let ox=e.offsetX-aw/2;  let oy=e.offsetY-ah/2;
+      if(ox>=sw-aw){
+         ox=sw-aw
+      }if(ox<=0){
+         ox=0
+      }if(oy>=sh-ah){
+         oy=sh-ah
+      }if(oy<=0){
+         oy=0
+     }
+      zezhao2.style.left=`${ox}px`;
+      zezhao2.style.top=`${oy}px`;
+
+      bimg.style.width=sw*sw/aw+"px";
+      bimg.style.height=sh*sh/ah+"px";
+      bimg.style.left=-sw*ox/aw+"px";
+      bimg.style.top=-sh*oy/ah+"px";
+     })
+
+     // console.log(bimg);
+     // console.log(bigs)
+
+
+    </script>
+    </body>
+</html>

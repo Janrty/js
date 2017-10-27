@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <link rel="stylesheet" href="css/index.css">
+        <script type="rem.js"></script>
+    </head>
+    <style type="text/css">
+    #box{
+        width: 200px;
+        height: 200px;
+        background: red;
+        margin: 50px auto;
+    }
+   
+    </style>
+    <body>
+     <div id="box"></div>
+    <script type="text/javascript">
+    let box=document.getElementById('box');
+    // console.log(box)
+
+    let w=10
+    let t=setInterval(fn,300);
+
+    
+    function fn () {
+    
+      let srt= parseInt(getComputedStyle(box,null).width);
+      console.log(srt);
+      if(srt>=500){
+        w=-w;
+      }
+      if(srt<200){
+        w=-w; 
+      }
+      box.style.width=`${srt+w}px`;
+    }
+    
+    </script>
+    </body>
+</html>

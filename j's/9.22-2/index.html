@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <link rel="stylesheet" href="css/index.css">
+        <!-- // <script type="rem.js"></script> -->
+    </head>
+    <style type="text/css">
+     .pointer{
+        width:100px;
+        height:100px;
+        background: red
+     }
+
+     
+    </style>
+    <body>
+        <div class="pointer">打撒</div>;
+        <i>sfdszbd</i>
+
+    <script type="text/javascript">
+    //insertAfter
+    
+    let divs=document.createElement("div");
+    let i=document.querySelector("i")
+    divs.style.width=“100px”;
+    divs.style.height=“100px”;
+    divs.style.background=blue;
+    
+    function insertAfter (argument,position) {
+        let next=position.nextElementSibling;
+        let parent=position.parentNode;
+        if(next){
+            parent.insertBefore(argument,position)
+        }else{
+            parent.appendChild()
+        }
+    }
+    insertAfter(divs,i);
+
+    </script>
+    </body>
+</html>

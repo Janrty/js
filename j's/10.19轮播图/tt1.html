@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <script src="js/jquery-3.2.1.js"></script>
+    </head>
+    <style>
+        *{
+            list-style: none;
+        }
+        ul{
+            width: 450px;
+            height: 300px;
+            margin: 0 auto;
+            background: red;
+            position: relative;
+            padding: 0;
+        }
+        li{
+            width: 450px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            top:0;
+            display: none;
+        }
+        li>img{
+            width: 450px;
+            height: 300px;
+        }
+
+        .active{
+            display: block;
+        }
+        .left{
+            transform:translateX(-100%);
+        }
+        .rig{
+            transform: translateY(100%);
+        }
+        .l1{
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            left:220px;
+            top: 40%;
+            font-size: 50px;
+            color: #000000;
+            cursor: pointer;
+        }
+        .r1{
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            right:200px;
+            top: 40%;
+            font-size: 50px;
+            color: #000000;
+            cursor: pointer;
+        }
+
+    </style>
+    <body>
+    <ul class="box">
+        <li class="active"><img src="img/5.jpeg" alt=""></li>
+        <li><img src="img/2.jpeg" alt=""></li>
+        <li><img src="img/3.jpeg" alt=""></li>
+        <li><img src="img/4.jpeg" alt=""></li>
+        <!--<li><img src="img/5.jpeg" alt=""></li>-->
+        <!--<li><img src="img/6.jpeg" alt=""></li>-->
+    </ul>
+
+
+    <div class="l1">
+        <
+    </div>
+    <div class="r1">
+        >
+    </div>
+
+
+    <script type="text/javascript">
+        $(function () {
+
+            setInterval(function () {
+                $(".l1").triggerHandler("click")
+            },2000)
+
+           $(".l1").on("click",function () {
+               let next=$(".active").next();
+               if(next.length){
+                   move(next,"left")
+               }else{
+                   next=$("ul>li").eq(0)
+                   move(next,"left")
+               }
+           })
+
+            $(".r1").on("click",function () {
+                let next=$(".active").next();
+                if(next.length){
+                    move(next,"rig")
+                }else{
+                    next=$("ul>li").eq(0)
+                    move(next,"rig")
+                }
+            })
+
+
+            function move(obj,dri) {
+                let active=$(".active");
+                active.addClass("dri").delay(1000).queue(function () {
+                    $(this).removeClass("dri").removeClass("active")
+                    $(this).dequeue()
+                })
+                let b=dri=="left"?"rig":"left";
+                obj.addClass("b")
+                obj[0].innerHTML;
+                obj.removeClass("b").addClass("active")
+
+            }
+
+        })
+    </script>
+
+    
+    </body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mycanvas</title>
+	<link rel="stylesheet" type="text/css" href="mycanvas.css">
+	<script src = 'mycanvas.js'></script>
+	<script src = 'canvas.js'></script>
+</head>
+<body>
+	<main>
+		<div class="left">
+			<ul>
+				<li active  id ='line' >线</li>
+				<li active  id = 'dash'>虚线</li>
+				<li active  id = 'juxing'>矩形</li>
+				<li active  id='polygon'>多边形</li>
+				<li active  id='wujiaoxing'>多角形</li>
+				<li active  id='circle'>圆形</li>
+				<li act id= 'stroke'>
+				描边<input active type="color" id ='stroke' >
+				</li>
+				<li act id='fill'>
+				填充<input active  type="color" id = 'fill' >
+				</li>
+				<li active id='pencil'>铅笔</li>
+				<li active id='xiangpi' xiangpi>橡皮</li>
+				<li active id='words' wenzi >文字</li>
+				<li active id='clip' clip>裁剪</li>
+				
+				
+			</ul>
+		</div>
+		<div class="right">
+			<ul>
+				<li active><a href="">保存</a></li>
+				<li inverse>反色</li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="box">
+			<canvas width="1180" height="580"></canvas>
+			<div class="xiangpi"></div>
+			<div class="clips"></div>
+			<div class="mask"></div>
+			
+			
+		</div>
+		
+	
+		
+		
+	</main>
+</body>
+
+</html>

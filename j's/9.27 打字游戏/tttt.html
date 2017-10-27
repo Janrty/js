@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <script src="gtr.js"></script>
+
+    </head>
+    <style type="text/css">
+       .box{
+        width: 40px;
+        height: 40px;
+        /*background: #FFFFFF;*/
+        color:red;
+        font-size: 40px;
+        text-align: center;
+        line-height: 40px;
+        position: absolute;
+        top:0;
+        left: 0px;
+       }
+       #game {
+       width: 400px;
+       margin: 0 auto;
+       }
+       #start {
+       width: 80px;
+       height: 40px;
+       }
+       span {
+       margin: 20px;
+       color: white;
+       margin-left: 50px;
+       }
+       body{
+        background: #000; 
+       }
+       .df{
+        width: 50px;
+        height: 50px;
+        position:fixed;
+        left: 0px;
+        top:0;
+        z-index: 999;
+        color: red;
+       }
+    </style>
+    <body>
+      <div id="game">
+      <button id="start">开始</button>
+      <span>得分:<i id="scroll">0</i></span>
+      </div>      
+      
+       
+      <script type="text/javascript">
+      let word=new game();
+      word.start();
+      </script>
+
+    
+    </body>
+</html>

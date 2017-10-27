@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="
+    width=device-width initial-scale=1.0
+    minimum-scale=1.0 maximum-scale=1.0 
+    user-scaleable=no">
+	<title>q</title>
+	 <link rel="stylesheet" type="text/css" href="css/adc.css">
+     <script src="js/rem.js"></script>
+</head>  
+<body>
+
+     <div class="box1">
+     <ul class="big">
+         <li class="dox">
+             <img src="img/23.png" class="dox11">
+         </li>
+         <li class="dox">
+             <img src="img/21.png" class="dox11" alt="">
+         </li>
+         <li class="dox">
+             <img src="img/10.png"  class="dox11" alt="">
+         </li>
+         <li class="dox">
+             <img src="img/25.png"  class="dox11" alt="">
+         </li>
+     </ul>
+     </div>
+     <script>
+         window.addEventListener('load',function () {
+             let cx,startx;
+             let big=document.querySelector(".big");
+             let imgw=window.innerWidth;
+             big.innerHTML+=big.innerHTML;
+             let len=big.childElementCount;
+             big.style.width=`${imgw*len}px`;
+             big.addEventListener('touchstart',function (e) {
+                  let event=e.changedTouches[0];
+                  startx=this.offsetLeft;
+                  cx=event.pageX;
+                  this.style.transition="none";
+
+
+                  let num=startx/imgw;
+                 if(num==0){
+                     num=-4
+                 }if(num==1-len){
+                     num=-3
+                 }
+                 big.style.left=`${num*imgw}px`;
+                 startx=this.offsetLeft;
+
+             });
+             big.addEventListener('touchmove',function (e) {
+                 let event=e.changedTouches[0];
+                 let mx=event.pageX;
+                 let lefts=startx+(mx-cx);
+                 big.style.left=`${lefts}px`
+             });
+
+
+             big.addEventListener('touchend',function () {
+                 let lefts=this.offsetLeft;
+                 let num=Math.round(lefts/imgw);
+                 this.style.transition='all 0.5s ease';
+                 this.style.left=`${num*imgw}px`
+
+             })
+
+         })
+     </script>
+</body>
+
+</html>

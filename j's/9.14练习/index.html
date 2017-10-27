@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>天猫</title>
+        <script type="text/javascript" src="js/rem.js"></script>
+    </head>
+    <body>
+     <script type="text/javascript">
+
+     // function Person() {
+     // 	this.name="zhangshan",
+     // 	this.sex="nan",
+     // 	this.eat=function(){
+     // 		alert("eat")
+     // 	}
+     // 	this.study=function(){
+     // 		alert("study")
+     // 	}
+     // 	this.aa=function(){
+     // 		alert("Person aa")
+     // 	}
+     // }
+     // Person.hello="hello world";
+     // Person.prototype.aa=function(){
+     //    alert("aa")
+     // };
+
+     // console.log(Person.hello);
+
+
+    // let arr=[1,2,3,4,5];
+    // for (var i = arr.length - 1; i >= 0; i--) {
+    //     console.log(arr[i]);
+    //  };
+    //  // new Array=[5];   //数组长度是5
+    //  // new Array.of=[5];   //数组元素是5
+    // console.log(arr.splice(1,1,"a")) 
+
+    // let arr1=["a","b","c"];
+    // arr.push(...arr1);
+    // console.log(arr);
+    
+    // arr.sort(function(a,b){
+    //     return a-b >0;
+    // })
+
+//添加到原型对象；
+   Array.prototype.qc=function(){
+    for (var i = arr1.length - 1; i >= 0; i--) {
+            if(!newarr1.includes(arr1[i])){
+             newarr1.push(arr1[i])
+            }
+        };return newarr1;
+   }
+    let arr1=[1,2,3,4,5,1,2,3];
+    let newarr1=[];
+    console.log(arr1.qc());
+
+
+    
+
+    //数组去重 第一种方法
+    // let arr1=[1,2,3,4,5,1,2,3];
+    // let newarr1=[];
+    // function  qc(){
+    //     for (var i = arr1.length - 1; i >= 0; i--) {
+    //         if(!newarr1.includes(arr1[i])){
+    //          newarr1.push(arr1[i])
+    //         }
+    //     };return newarr1;
+    // }
+    // console.log(arr1.qc());
+
+
+    
+    //数组去重 第2种方法
+    // let arr1=[1,2,3,4,5,1,2,3];
+    // let newarr2=[];
+    // function qc1(){
+    //     for (let i =0;i<arr1.length;i++) {
+    //        let  flag=true;
+    //         for (let j =i+1;j<arr1.length;j++) {
+    //            if( arr1[j]==arr1[i]){
+    //            flag=false;
+    //            break;
+    //            }
+    //         };
+    //         if(flag){
+    //        newarr2.push(arr1[i]);
+    //         } 
+    //     };
+    //     return newarr2;
+    // }
+    // console.log(qc1(arr1));
+    
+
+
+
+
+    
+    
+
+
+     </script>
+    </body>
+</html>

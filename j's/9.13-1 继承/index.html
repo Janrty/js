@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>天猫</title>
+        <script type="text/javascript" src="js/rem.js"></script>
+    </head>
+    <body>
+     <script type="text/javascript">
+
+     function Person() {
+     	this.name="zhangshan",
+     	this.sex="nan",
+     	this.eat=function(){
+     		alert("eat")
+     	}
+     	this.study=function(){
+     		alert("study")
+     	}
+     	this.aa=function(){
+     		alert("Person aa")
+     	}
+     }
+     function student(){
+     	this,classes="wuif1707-1",
+     	this.num="wuif1707007"
+     	this.sikkl=function(){
+     		alert("sikkl")
+     	}
+     }
+     student.prototype=new Person();
+     let zhangshan=new Person();
+     let lisi=new student();
+     console.log(zhangshan.name);
+     console.log(lisi.name);
+     console.log(Person.prototype.__proto__)
+
+
+
+     </script>
+    </body>
+</html>

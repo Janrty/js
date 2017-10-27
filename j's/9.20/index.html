@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>小广告</title>
+    </head>
+    <style type="text/css">
+    .box{
+        width: 200px;
+        height: 200px;
+        background: red;
+        position: absolute;
+        left: 0;
+        top:0;
+
+    }
+    </style>
+    <body>
+    <div class="box"></div>
+
+    <script type="text/javascript">
+    let box=document.getElementsByClassName('box')[0];
+    // let tops=box.offsetTop
+    // console.log(tops)
+    let w= parseInt(getComputedStyle(box,null).height);
+    let a=window.innerHeight-box.offsetHeight;
+    let b=window.innerWidth-box.offsetWidth;
+    let srt=10;
+    let srt1=10;
+    // console.log(a);
+    let t=setInterval(move,10);
+    function move () {
+        let tops=box.offsetTop+srt;
+        let lefts=box.offsetLeft+srt1;
+
+        if(tops>=a){
+            tops=a
+            srt*=-1;
+        }
+        if(tops<=0){
+            tops=0
+            srt=-srt
+        }
+        if(lefts>=b){
+            lefts=b
+            srt1*=-1;
+        }
+        if(lefts<=0){
+            lefts=0
+            srt1=-srt1
+        }
+        
+        box.style.top=tops+"px"
+        box.style.left=lefts+"px"
+    }
+
+    // let tt=setInterval(move1,100);
+    // function move1 () {
+    //     let lefts=box.offsetLeft+srt;
+    //     if(lefts>=b){
+    //         lefts=b
+    //         srt*=-1;
+    //     }
+    //     if(lefts<=0){
+    //         lefts=0
+    //         srt=-srt
+    //     }
+        
+    //     box.style.left=lefts+"px"
+    // }
+
+
+
+
+
+
+    </script>
+    </body>
+</html>

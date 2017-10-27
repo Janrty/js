@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <script src="js/rem.js"></script>
+        <script src="gtr.js"></script>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                text-decoration: none;
+            }
+            .tools{
+                width: 98%;
+                height: 150px;
+                margin: 0 auto;
+            }
+            .box{
+                width: 98%;
+                height: 600px;
+                margin: 0 auto;
+                border: 1px solid #000000;
+            }
+            .left{
+               width: 30%;
+                height: 150px;
+                background:lightgrey;
+                float: left;
+            }
+            .right1{
+                width: 12%;
+                height: 150px;
+                background:pink;
+                float: left;
+            }
+            .left>li{
+                width: 40px;
+                height: 40px;
+                float: left;
+                font-size: 10px;
+                line-height: 40px;
+                text-align: center;
+                margin-left: 40px;
+                margin-top: 25px;
+                background: lightskyblue;
+            }
+            input{
+                width: 40px;
+                height: 40px;
+                float: left;
+            }
+            .right1>li{
+                width: 40px;
+                height: 40px;
+                float: left;
+                font-size: 10px;
+                line-height: 40px;
+                text-align: center;
+                margin-left: 40px;
+                margin-top: 25px;
+                background: lightskyblue;
+            }
+            .right2{
+                width: 57%;
+                height: 150px;
+                background: honeydew;
+                float: left;
+            }
+            .right2>li{
+                width: 80px;
+                height: 40px;
+                float: left;
+                margin-left: 50px;
+                margin-top: 50px;
+            }
+            #rig{
+                margin-left: 0;
+            }
+            button{
+                width:80px;
+                height: 40px;
+
+            }
+        </style>
+    </head>
+    <body>
+<main>
+    <div class="tools">
+       <ul class="left">
+           <li id="link">画线</li>
+           <li id="yuan">画圆</li>
+           <li id="">三角形</li>
+           <li id="">四边形</li>
+           <li id="">五边形</li>
+           <li id="">五角星</li>
+           <li id="">六角星</li>
+           <li>
+               铅笔
+           </li>
+       </ul>
+        <ul class="right1">
+            <li>描边</li>
+            <li id="rig"><input type="color" name="color" value="#000000"></li>
+            <li>填充</li>
+            <li id="rig"><input type="color" name="color" value="#000000"></li>
+        </ul>
+
+        <ul class="right2">
+            <li>
+                <button>新建</button>
+            </li>
+            <li>
+                <button>撤销</button>
+            </li>
+            <li>
+                <button>清除</button>
+            </li>
+            <li>
+                <button>复制</button>
+            </li>
+            <li>
+                <button>剪切</button>
+            </li>
+
+
+        </ul>
+
+    </div>
+    <canvas class="box">
+
+    </canvas>
+</main>
+    
+    </body>
+
+</html>

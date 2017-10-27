@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>导航选项卡、轮播图</title>
+	<script src="js/jquery-3.2.1.js"></script>
+</head>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+	ul.tab{
+		width: 1000px;
+		height: 30px;
+		margin: 30px auto;
+		background: #f2f2f2;
+
+	}
+	ul.tab > li{
+		width: 200px;
+		height: 100%;
+		border-right: 1px solid #000;
+		box-sizing: border-box;
+		float: left;
+		text-align: center;
+		line-height: 30px;
+		position: relative;
+	}
+	.item{
+		width: 100%;
+		height: auto;
+		background: #ccc;
+		z-index: 9999;
+		display: none;
+		position: absolute;
+		top: 32px;
+		left: 0;
+		
+	}
+	.item > li{
+		width: 100%;
+		height: 30px;
+		border-bottom: 2px solid #fff;
+		text-align: center;
+		line-height: 30px;
+	}
+	.win{
+		width: 800px;
+		height: 400px;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+	}
+	.win > .imgBox{
+		width: 100%;
+		height: 100%;
+	}
+	.win > .imgBox >li{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 100%;
+	}
+	.win > .imgBox >li:first-child{
+		left: 0;
+		width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+	<ul class="tab">
+		<li>
+			新闻
+			<ul class="item">
+				<li>11</li>
+				<li>22</li>
+				<li>33</li>
+				<li>44</li>
+			</ul>
+		</li>
+		<li>
+			新闻
+			<ul class="item">
+				<li>11</li>
+				<li>22</li>
+				<li>33</li>
+				<li>44</li>
+			</ul>
+		</li>
+		<li>
+			新闻
+			<ul class="item">
+				<li>11</li>
+				<li>22</li>
+				<li>33</li>
+				<li>44</li>
+			</ul>
+		</li>
+		<li>
+			新闻
+			<ul class="item">
+				<li>11</li>
+				<li>22</li>
+				<li>33</li>
+				<li>44</li>
+			</ul>
+		</li>
+		<li>
+			新闻
+			<ul class="item">
+				<li>11</li>
+				<li>22</li>
+				<li>33</li>
+				<li>44</li>
+			</ul>
+		</li>
+	</ul>
+	<div class="win">
+		<ul class="imgBox">
+			<li>
+                <img src="1.jpeg" alt="">
+            </li>
+			<li>
+                <img src="2.jpeg" alt="">
+            </li>
+			<li>
+                <img src="3.jpeg" alt="">
+            </li>
+			<li>
+                <img src="4.jpeg" alt="">
+            </li>
+		</ul>
+	</div>
+	<script>
+	$(function(){
+		let lis = $('.tab > li');
+		let item = $('.item');
+		lis.on('mouseenter mouseleave',function(){
+			// $('.item',this)
+            $(this).find('.item').stop();
+			$(this).find('.item').slideToggle();
+		})
+	});
+	$(function(){
+		let imgs = $('.imgBox >li');
+		let imgW = imgs.width();
+		let now = next = 0;
+		let t = setInterval(move,3000);
+		function move(){
+			// btnR.triggerHandler('click');
+			next++;
+			if(next == imgs.length){
+				next = 0;
+			}
+			imgs.eq(next).css('left',imgW);
+			imgs.eq(next).animate({left:0});
+			imgs.eq(now).animate({left:-imgW});
+			now = next;
+		}
+	})
+		
+	</script>
+</body>
+</html>

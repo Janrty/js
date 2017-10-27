@@ -1,0 +1,54 @@
+/*
+* @Author: asus
+* @Date:   2017-08-22 15:42:47
+* @Last Modified by:   asus
+* @Last Modified time: 2017-08-23 08:39:56
+*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+main{
+	width: 600px;
+	height: auto;
+	margin: 50px auto;
+}
+table{
+	width: 600px;
+	border-collapse: collapse;
+	text-align: center;
+}
+th{
+	padding: 8px 10px;
+	border-bottom: 2px solid #ff6700;
+}
+td{
+	padding: 8px 10px;
+	border-bottom: 1px solid #ff6700;
+	font-weight: normal;
+}
+tr:nth-of-type(2n){
+	background: #b4eae3;
+}
+button{
+	padding: 3px 8px;
+	border: none;
+	outline: none;
+	border-radius: 3px;
+}
+.btnadd{
+	background: #3180af;
+	color: white;
+	margin-top: 5px;
+	float: right;
+	margin-right: 20px;
+}
+.btndel{
+	background: #da6a28;
+	color: white;
+}
+input{
+	width: 100px;
+	height: 20px;
+}

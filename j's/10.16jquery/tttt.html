@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <script src="js/jquery-3.2.1.js"></script>
+    </head>
+    <style>
+        ul{
+
+        }
+        .p1{
+            width: 100%;
+            height: 30px;
+        }
+
+    </style>
+    <body>
+    <ul class="ul1">
+        <p class="p1">这是p</p>
+        <li class="l1">l1-1</li>
+        <li class="l2">l1-2</li>
+        <li class="l1">l1-3</li>
+    </ul>
+    <ul class="ul2">
+        <li >l2-1</li>
+        <li>l2-2</li>
+        <li>l2-3</li>
+    </ul>
+    <ul class="ul3">
+        <li>l3-1</li>
+        <li>l3-2</li>
+        <li>l3-3</li>
+    </ul>
+    <script type="text/javascript">
+       $(function () {
+//           $("ul").css({background:"red"});
+//           $("ul>.l1").css({background:"blue"});
+           $("li").click(function () {
+               $(this).css({"height":"100"})
+           })
+           $(".l1").on("click",function () {
+               $(this).css({background: "blue"})
+           });
+           $(".l1 +.l2").css({height:"200"})
+           });
+       $("li:first").css({background:"red"})
+
+    </script>
+
+    
+    </body>
+
+</html>

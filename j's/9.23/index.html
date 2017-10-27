@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <!-- <link rel="stylesheet" href="css/index.css"> -->
+        <script src='animate.js'></script>
+    </head>
+    <style type="text/css">
+        .divs{
+        width: 1200px;
+        height: 680px;
+        margin: 0 auto;
+        background: pink;
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 100%;
+        margin-bottom: 10px;
+        }
+    </style>
+    <body>
+        <div class="divs">
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        </div>
+
+
+        <div class="divs">
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        </div>
+
+
+        <div class="divs">
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        </div>;
+
+
+        <div class="divs">
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        </div>
+
+
+        <div class="divs">
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        <div class="floor"><img  imgPath="1.jpg"></div>
+        </div>
+
+    <script type="text/javascript">
+        window.onload=function() {
+           let  floor=document.querySelectorAll('.divs');
+        //    // console.log(floor);
+           let ch=innerHeight;
+           let floorArr=[];
+
+        //    window.onscroll=function(){
+        //     let scrolltop=document.body.scrollTop;
+        //     floorArr.forEach((value,index)=>{
+        //     if(scrolltop+ch>=value+300){
+        //     let imgs=floor[index].getElementsByTagName('img');
+        //     for(let i=0;i<imgs.length;i++){
+        //     imgs[i].src=imgs[i].getAttribute('imgPath');
+            
+        //    }
+        // }
+        // });
+        // }
+        floor.forEach(element=>{
+                floorArr.push(element.offsetTop);
+            })
+
+        // animate(document.body,{scrollTop:floorArr[index]})
+            
+
+
+            window.onscroll=function(){
+                // if(!flag){
+                //     return;
+                // }
+
+                let scrolltop=document.body.scrollTop; 
+                // console.log(scrolltop) //谷歌
+                floorArr.forEach((value,index)=>{
+                    if(scrolltop+ch>=value+300){
+                            
+                            // for(let i=0;i<aside.length;i++){
+                            //     aside[i].style.background='none';
+                            // }
+                            // aside[index].style.background=color[index];
+                        
+
+                        let imgs=floor[index].getElementsByTagName('img');
+                        for(let i=0;i<imgs.length;i++){
+                            imgs[i].src=imgs[i].getAttribute('imgPath');
+                            animate(document.body,{scrollTop:floorArr[index]})
+                        }
+                    }
+                })
+            }
+        // onscroll();
+    }
+
+    </script>
+    </body>
+</html>

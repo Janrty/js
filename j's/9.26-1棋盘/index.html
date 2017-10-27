@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+
+    </head>
+    <style type="text/css">
+      ul{
+        width: 400px;
+        height: 400px;
+        background: #000;
+        border: 1px solid #000;
+      }
+      li{
+        width: 19px;
+        height: 19px;
+        background: #ffffff;
+        margin-left: 1px;
+        margin-top: 1px;
+        float: left;
+
+      }
+    </style>
+    <body>
+    <ul>
+    </ul>
+       
+    <script type="text/javascript">
+      let ul=document.querySelector("ul");
+      for (let i = 0;i <400;i++) {
+        ul.innerHTML=`<li></li>`
+      };
+
+    </script>
+    </body>
+</html>

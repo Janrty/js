@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <link rel="stylesheet" href="css/index.css">
+        <!-- // <script type="rem.js"></script> -->
+    </head>
+    <style type="text/css">
+     .box{
+        width: 80px;
+        height: 80px;
+        background: red;
+        border-radius: 50%;
+        position: absolute;
+        left: 50px;
+        top:50px;
+        transition: all ease 100ms;
+
+
+     }
+    </style>
+    <body>
+        <div class="box"></div>
+    <script type="text/javascript">
+
+    for(i=0;i<20;i++){
+    let divs=document.createElement("div");
+    divs.className='box';
+    let lefts=Math.floor((innerWidth-80)* Math.random());
+    let tops=Math.floor((innerHeight-80)* Math.random());
+    let widths=Math.floor(Math.random()*70+30);
+    // console.log(tops);
+    // divs.style.left=`${lefts}px`;
+    // divs.style.top=`${tops}px`;
+    divs.style.width=`${widths}px`;
+    divs.style.height=`${widths}px`;
+    divs.style.background=color();
+    document.body.appendChild(divs);
+
+
+     function color(){
+       let srt="rgb(";
+        console.log(srt);
+        for (let i=0;i<3;i++){
+           let num=Math.floor(Math.random()*256);
+           srt=srt+num+",";
+        }
+        srt=srt.slice(0,-1)+")";
+        return srt;
+        };
+
+        setTimeout(function(){
+            divs.style.transitionDelay=`${100*i}ms`;
+            divs.style.left=`${lefts}px`;
+            divs.style.top=`${tops}px`;
+            },10)
+    }
+    
+    // function color () {
+    //    let srt="rgb(";
+    //     for (i=0;i<3;i++){
+    //        let num=Math.floor(Math.random()*256);
+    //        srt=srt+num+",";
+    //     }
+    //     srt=srt.slice(0,-1)+")";
+    //     console.log(srt);
+    //     return srt;
+    //     };
+    
+    </script>
+    </body>
+</html>

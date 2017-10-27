@@ -1,0 +1,20 @@
+&:nth-of-type(1){
+		  left:$width / 15*3.5
+		  top:$width / 15*3.5
+	    }
+	    &:nth-of-type(2){
+		  left:$width/15*11.5
+		  top:$width/15*3.5
+	    }
+	    &:nth-of-type(3){
+		  left:$width/15*7.5
+		  top:$width/15*7.5
+	    }
+	    &:nth-of-type(4){
+		  left:$width/15*3.5
+		  top:$width/15*11.5
+	    }
+	    &:nth-of-type(5){
+		  left:$width/15*11.5
+		  top:$width/15*11.5
+	    }

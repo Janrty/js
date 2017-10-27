@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <link rel="stylesheet" href="css/index.css">
+        <script type="rem.js"></script>
+    </head>
+    <style type="text/css">
+    button{
+         background: blue;
+         border: 2px;
+         width:75px;
+         border-radius: 5px;
+    }
+    .slide{
+    	width: 160px;
+    	height: 300px;
+    	background: red;
+    	margin-top: 10px;
+
+    }
+
+    </style>
+    <body>
+    	<button>slidedown</button>
+    	<button>slideup</button>
+    	<button>上升 下降</button>
+
+    	<div class="slide"></div>
+
+    	<script type="text/javascript">
+		    let btns=document.getElementsByTagName('button');
+		    let slide=document.getElementsByClassName("slide")
+		    btns[0].onclick=function() {
+		          slide[0].style.height="300px";
+		    };
+		    btns[1].onclick=function() {
+		          slide[0].style.height="0px";
+		    };
+		    btns[2].onclick=function() {
+		     	var flag=true;
+		     	if(flag){
+                   slide[0].style.height="0px";
+                   flag=false;
+		     	}else{
+                   slide[0].style.height="300px";
+		     	}     
+		    };
+
+    	</script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+
+    </head>
+    <style>
+        canvas{
+            border: 1px solid #000000;
+        }
+    </style>
+    <body>
+    <canvas width="1000" height="800"></canvas>
+
+    <script type="text/javascript">
+    let canvas=document.querySelector("canvas");
+    let ctx=canvas.getContext('2d');
+
+
+    play(100,5)
+    function play(r,n) {
+        let rad=Math.PI / n;
+        ctx.beginPath();
+
+        ctx.moveTo(400+r,400);
+        for( let i=0;i<=2*n;i++){
+            let r1;
+            r1=i%2==0? r:r/2;
+            let x=400+r1*Math.cos(rad*i);
+            let y=400+r1*Math.sin(rad*i);
+            ctx.lineTo(x,y);
+        }
+        ctx.closePath();
+        ctx.stroke()
+    }
+
+
+    </script>
+
+    
+    </body>
+
+</html>

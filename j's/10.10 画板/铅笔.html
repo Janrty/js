@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <style>
+            button{
+                width:100px;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+    <button>撤销</button>
+    <canvas width="600" height="600"></canvas>
+
+    <script type="text/javascript">
+    let canvas=document.querySelector("canvas");
+    let ctx=canvas.getContext('2d');
+    let arr=[];
+    canvas.onmousedown=function (e) {
+        let cx=e.offsetX, cy=e.offsetY;
+        canvas.onmousemove=function(e){
+
+            let ox=e.offsetX, oy=e.offsetY;
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            if(arr.length){
+                ctx.putImageData(arr[arr.length-1],0,0)
+            }
+            ctx.beginPath();
+            ctx.moveTo(cx,cy);
+            ctx.lineTo(ox,oy);
+            ctx.stroke();
+        };
+    };
+
+    canvas.onmouseup=function () {
+        arr.push(ctx.getImageData(0,0,canvas.width,canvas.height));
+//                canvas.onmousedown=null;
+        canvas.onmousemove=null;
+    };
+
+
+    let btn=document.querySelector('button');
+    btn.onclick=function () {
+        if(!arr.length){
+            alert('已经撤销完了')
+        }
+        arr.pop();
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.putImageData(arr[arr.length-1],0,0)
+
+    }
+
+
+
+
+
+
+    </script>
+
+    
+    </body>
+
+</html>

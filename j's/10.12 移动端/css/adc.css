@@ -1,0 +1,38 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 355320 */
+  src: url('http://at.alicdn.com/t/font_77awij3lioirudi.eot');
+  src: url('http://at.alicdn.com/t/font_77awij3lioirudi.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_77awij3lioirudi.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_77awij3lioirudi.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_77awij3lioirudi.svg#iconfont') format('svg');
+}
+.box1{
+    width: 100%;
+    height: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+.big{
+    width: 400%;
+    height: 3rem;
+    position: absolute;
+    left: 0;
+    top:0;
+}
+.dox{
+    width: 6.4rem;
+    height: 3rem;
+    float: left;
+    /*overflow: hidden;*/
+}
+.big>li>img{
+    display: block;
+    width: 100%;
+    height: 100%;
+ }

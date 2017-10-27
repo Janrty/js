@@ -1,0 +1,222 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='animate.js'></script>
+</head>
+
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+	.box{
+		width: 1200px;
+		height: 300px;
+		margin: 0 auto;
+		background: skyblue;
+		text-align: center;
+		font-size: 30px;
+		color: #000;
+		margin-bottom: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.divs{
+		width: 1200px;
+		height: 680px;
+		margin: 0 auto;
+		background: pink;
+		display: flex;
+		flex-wrap: wrap;
+		line-height: 100%;
+		margin-bottom: 10px;
+
+	}
+	.floor{
+		width: 25%;
+		height: 340px;
+		/* float: left; */
+		/* flex-shrink: 0; */
+	}
+	.floor > img{
+		width: 300px;
+		height: 340px;
+	}
+	.box:nth-of-type(2){
+		background: #ff8700;
+	}
+	.box:nth-of-type(3){
+		background: yellowgreen;
+	}
+	.box:nth-of-type(4){
+		background: #ff9;
+	}
+	.box:nth-of-type(5){
+		background: #555;
+	}
+	.aside{
+		position: fixed;
+		left: 0;
+		top: 50%;
+		margin-top: -100px;
+	}
+	.aside li{
+		width: 40px;
+		font-size: 14px;
+		line-height: 40px;
+		text-align: center;
+		box-sizing: border-box;
+		border: 1px solid #ff0036;
+		margin-bottom: -1px;
+	}
+</style>
+<body>
+	<div class="box">div1</div>
+	<!-- active自己定义的属性 -->
+	<div class="box">div2</div>
+	<div class="box">div3</div>
+	<div class="box">div4</div>
+	<div class="box">div5</div>
+	
+	<div class='divs'>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+		<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+		<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	</div>
+	
+	<div class='divs'>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+		<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+		<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	</div>
+
+	<div class='divs'>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+		<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+		<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	</div>
+	<div class='divs'>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+		<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+		<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	</div>
+	<div class='divs'>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+		<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+		<div class="floor"><img  imgPath="1.jpg"></div>
+	 	<div class="floor"><img  imgPath="1.jpg"></div>
+	</div>
+	<ul class="aside">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+
+<script>
+	// let box=document.querySelector('div');
+	// box.getAttribute('active');   //获取自定义属性
+	// box.setAttribute('aa','bb');	//设置属性
+	
+
+
+
+
+
+
+
+
+//按需加载
+
+//1.图片存到某一个地方
+//楼层出现 innerHeight+scrollTop==offsettop
+	window.onload=function(){
+		
+			//楼层跳转
+			let ch=innerHeight;
+			let  floor=document.querySelectorAll('.divs');
+			let  box=document.querySelectorAll('.box');
+			console.log(box)
+			let floorArr=[];
+			let aside=document.querySelectorAll('.aside li');
+			let color=['pink','skyblue','#ff8','#ff9700','#789'];
+			let flag=true;
+			console.log(aside)
+			floor.forEach(element=>{
+				floorArr.push(element.offsetTop);
+			})
+			aside.forEach((element,index)=>{
+				element.onclick=function(){
+					for(let i=0;i<aside.length;i++){
+						aside[i].style.background='none';
+					}
+					flag=false;
+					element.style.background=color[index];
+					animate(document.body,{scrollTop:floorArr[index]},function(){flag=true;})
+			}
+
+			})
+
+			// console.log(document.documentElement.scrollTop);  //0
+			// console.log(document.body.scrollTop);  //小数
+			
+			
+			
+			window.onscroll=function(){
+				if(!flag){
+					return;
+				}
+
+				let scrolltop=document.body.scrollTop; 
+				console.log(scrolltop) //谷歌
+				floorArr.forEach((value,index)=>{
+					if(scrolltop+ch>=value+300){
+							
+							for(let i=0;i<aside.length;i++){
+								aside[i].style.background='none';
+							}
+							aside[index].style.background=color[index];
+						
+
+						let imgs=floor[index].getElementsByTagName('img');
+						for(let i=0;i<imgs.length;i++){
+							imgs[i].src=imgs[i].getAttribute('imgPath');
+						}
+					}
+				})
+			}
+		// onscroll();
+	}
+
+</script>
+</body>
+</html>

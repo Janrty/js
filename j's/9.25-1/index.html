@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <!-- <link rel="stylesheet" href="css/index.css"> -->
+    </head>
+    <style type="text/css">
+       .box{
+        width: 200px;
+        height: 200px;
+        background: red; 
+        position:absolute;
+        left: 0;
+        top:0;
+       }
+       .son{
+        width: 200px;
+        height: 200px;
+        background: blue; 
+        position:absolute;
+        left: 300;
+        top:300;
+       }
+    </style>
+    <body>
+        <div class="box"></div>
+        <div class="son"></div>
+    <script type="text/javascript">
+     
+     // window.addEventListener('load',function(){
+     // let box=document.querySelector("div.box");
+     //  box.addEventListener("mousedown",function(e){
+     //    let ox=e.offsetX;  let oy=e.offsetY;
+     //    document.addEventListener("mousemove",fn);
+     //    document.addEventListener("mouseup",function(){
+        //     document.removeEventListener("mousemove",fn)
+        // })
+        // function fn(e){
+        //     let lefts=e.clientX-ox;
+        //     let tops=e.clientY-oy;
+        //     box.style.left=`${lefts}px`;
+        //     box.style.top=`${tops}px`;
+        // }
+     // })
+     // });
+
+    let son=document.querySelector("div.son");
+    let box=document.querySelector("div.box");
+     class drag{
+        constructor(obj){
+            this.obj=obj;
+        }
+        move(){
+            let that=this;
+            // let son=document.querySelector("div.son");
+            this.obj.addEventListener("mousedown",function(e){
+            let ox=e.offsetX;  let oy=e.offsetY;
+            document.addEventListener("mousemove",fn);
+            document.addEventListener("mouseup",function(){
+            document.removeEventListener("mousemove",fn)
+            })
+            function fn(e){
+            let lefts=e.clientX-ox;
+            let tops=e.clientY-oy;
+            that.obj.style.left=`${lefts}px`;
+            that.obj.style.top=`${tops}px`;
+        }
+     })
+        }
+     }
+
+     let sons=new drag(son);
+     sons.move();
+     let boxs=new drag(box);
+     boxs.move()
+
+    </script>
+    </body>
+</html>

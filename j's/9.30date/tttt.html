@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+
+    </head>
+    <body>
+
+    <script type="text/javascript">
+        setInterval(fn,1000)
+        function fn() {
+
+            let now = new Date();
+            let zq = new Date('2017/10/4 00:00:00');
+            let cha = Math.floor((zq.getTime() - now.getTime()) / 1000);
+//        console.log(cha)
+            let day = Math.floor(cha / (60 * 60 * 24));
+            cha = cha % (60 * 60 * 24);
+            let hour = Math.floor(cha / (60 * 60));
+            cha = cha % (60 * 60);
+            let min = Math.floor(cha / 60);
+            let sen = cha % 60;
+            document.body.innerText=`${day}天${hour}时${min}分${sen}秒`
+
+        }
+      </script>
+
+    
+    </body>
+
+</html>

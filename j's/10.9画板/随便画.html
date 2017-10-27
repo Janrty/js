@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+
+    </head>
+    <style>
+        canvas{
+            border: 1px solid #000000;
+        }
+    </style>
+    <body>
+    <canvas width="1000" height="800"></canvas>
+
+    <script type="text/javascript">
+    let canvas=document.querySelector("canvas");
+    let ctx=canvas.getContext('2d');
+
+
+//   canvas.onmousedown=function (e) {
+//       let cx=e.offsetX;
+//       let cy=e.offsetY;
+//       canvas.onmousemove=function (e) {
+//           ctx.clearRect(0,0,canvas.width,canvas.height);
+//           let ox=e.offsetX;
+//           let oy=e.offsetY;
+//           ctx.beginPath();
+//           ctx.moveTo(cx,cy);
+//           ctx.lineTo(ox,oy);
+//           ctx.stroke()
+//       };
+//
+//   };
+//   canvas.onmouseup=function () {
+////       canvas.onmousedown=null;
+//       canvas.onmousemove=null;
+//   }
+
+
+       // 画圆
+
+
+   canvas.onmousedown=function (e) {
+       let cx=e.offsetX;
+       let cy=e.offsetY;
+       canvas.onmousemove=function (e) {
+           ctx.clearRect(0,0,canvas.width,canvas.height);
+           let ox=e.offsetX;
+           let oy=e.offsetY;
+           let r=Math.sqrt(Math.pow(cx-ox,2)+Math.pow(cy-oy,2));
+           ctx.beginPath();
+//            ctx.moveTo(cx,cy);
+           ctx.arc(cx,cy,r,0,Math.PI*2);
+           ctx.stroke()
+       };
+
+   };
+   canvas.onmouseup=function () {
+       canvas.onmousemove=null;
+//        canvas.onmousedown=null;
+   }
+
+
+
+
+//    画多角星
+
+
+//     canvas.onmousedown=function (e) {
+//         let cx=e.offsetX;
+//         let cy=e.offsetY;
+//         canvas.onmousemove=function (e) {
+//             ctx.clearRect(0,0,canvas.width,canvas.height);
+//             let ox=e.offsetX;
+//             let oy=e.offsetY;
+//             let r=Math.sqrt(Math.pow(cx-ox,2)+Math.pow(cy-oy,2));
+
+// //            ctx.moveTo(cx,cy);
+// //            ctx.arc(cx,cy,r,0,Math.PI*2);
+//             play(cx,cy,r,5)
+
+//         };
+//         function play(x1,y1,r,n) {
+//             let rad=Math.PI / n;
+//             ctx.beginPath();
+
+//             ctx.moveTo(x1+r,y1);
+//             for( let i=0;i<=2*n;i++){
+//                 let r1;
+//                 r1=i%2==0? r:r/2;
+//                 let x=x1+r1*Math.cos(rad*i);
+//                 let y=y1+r1*Math.sin(rad*i);
+//                 ctx.lineTo(x,y);
+//             }
+//             ctx.closePath();
+//             ctx.stroke()
+//         }
+
+//     };
+//     canvas.onmouseup=function () {
+//         canvas.onmousemove=null;
+// //        canvas.onmousedown=null;
+//     };
+
+
+
+    </script>
+
+    
+    </body>
+
+</html>

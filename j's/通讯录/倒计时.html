@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	// let time=new Date('8/25/2017 8:15:0');
+	// let time=new Date(2018,9,20,9,20,30);
+	// console.log(time)
+	// 周末倒计时
+	fn();
+	setInterval(fn,1000);
+	function fn(){
+		let now=new Date();
+		let tom=new Date('2017/8/25 18:30:00');
+		let cha=Math.floor((tom.getTime()-now.getTime())/1000)
+		let day=Math.floor(cha/(60*60*24));
+			cha=cha%(60*60*24);
+		let hour=Math.floor(cha/(60*60));
+			cha=cha%(60*60);
+		let minute=Math.floor(cha/60);
+		let second=Math.floor(cha%60);
+		document.body.innerText=`${day}天${hour}时${minute}分${second}秒`
+
+	}
+
+
+	//分钟倒计时
+	// function djs(num){
+	// 	let now=new Date();
+	// 	let next=new Date();
+	// 	next.setTime(now.getTime()+1000*60*num);
+	// 	let t;
+	// 	t=setInterval(fn, 1)
+	// 	function fn(){
+	// 		let now1=new Date()
+	// 		let cha=Math.floor((next.getTime()-now1.getTime()))
+	// 		let minute=Math.floor(cha/(1000*60));
+	// 		let	cha1=cha%(1000*60);
+	// 		let second=Math.floor(cha1/(1000));
+	// 			cha1=cha1%1000;
+	// 		let mil=Math.floor(cha1);
+			
+	// 		document.body.innerText=`${minute} 分 ${second} 秒 ${mil} 毫秒`
+	// 		if(cha==0){
+	// 			clearInterval(t)
+	// 		}
+	// 	}
+	// }
+	// djs(0.1);	
+
+</script>

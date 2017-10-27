@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>天猫</title>
+        <script type="text/javascript" src="js/rem.js"></script>
+    </head>
+    <body>
+        <h1> <a href="">这是index1</a></h1>
+        <button id="forward">前进</button>;
+        <button id="back">后退</button>;
+        <button id="refresh">刷新</button>;
+        <style type="text/css">
+            
+        </style>
+
+     <script type="text/javascript">
+     // console.log(Math.abs(-10));
+     // console.log(Math.abs(-40));
+     // console.log(Math.round(-40.5));
+     // console.log(Math.round(-0.45));
+     // console.log(Math.ceil(-40.5));
+     // console.log(Math.floor(-40.5));
+     // console.log(Math.random());
+
+
+     // let arr =["a","b","c","d","e"];
+     // function shange(arr,num){
+     //    let arr1=[];
+     //    // let str=Math.floor(Math.random()*arr.length);
+     //    for (let i=0;i<num;i++){
+     //    let str=Math.floor(Math.random()*arr.length);
+     //    while(arr1.includes(arr[str])){
+     //        str=Math.floor(Math.random()*arr.length);
+     //    }
+     //    arr1.push(arr[str]);
+     // };
+     //   return arr1;
+     // }
+     // console.log(shange(arr,5));
+
+
+     // let arr =["a","b","c","d","e"];
+     // function shange(arr,num){
+     //    let arr1=[];
+     //    // let str=Math.floor(Math.random()*arr.length);
+     //    for (let i=0;i<num;i++){
+     //    let str=Math.floor(Math.random()*arr.length);
+     //    if(arr1.includes(arr[str])){
+     //       i--
+     //    }else{
+     //    arr1.push(arr[str]);
+     //   };
+     // };
+     //   return arr1;
+     // }
+     // console.log(shange(arr,5));
+
+     // function shange1(arr,num){
+     //    let arr2[];
+     //    for(let i=0;i<num;i++){
+     //        let srt=Matha.floor(Math.random()*arr.length)
+     //    }
+     // }
+     // alert(confirm("你是傻逼吗？请点击确定查看结果"))
+
+
+
+    // alert(window.screenLeft);
+    // alert(window.screenX);
+
+    // alert(window.screenTop);
+    // alert(window.innerWidth);
+    // alert(outerWidth);
+    // alert(document.documentElement.clientHeight);
+    // alert(window.outerHeight);
+    // alert(window.screen.width);
+    // alert(window.screen.height);
+
+
+    // history.forward();
+    // history.back();
+    // history.go(0);
+   let forward=document.getElementById("forward");
+   forward.onclick=function(){
+        history.forward();
+    };
+
+    let back=document.getElementById("back");
+    back.onclick=function(){
+        history.back();
+    };
+    let refresh=document.getElementById("refresh");
+    refresh.onclick=function(){
+        history.go(0);
+    };
+
+
+    
+     </script>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <link rel="stylesheet" href="css/index.css">
+        <script type="rem.js"></script>
+    </head>
+    <style type="text/css">
+    .btn{
+        width: 125px;
+        height: 15px;
+        position: absolute;
+        top: 300px;
+        bottom: 20px;
+        left: 50%;
+        margin-left: -62px;
+        list-style: none;
+
+
+
+    }
+    ul.btn>li{
+        width: 15px;
+        height: 15px;
+        float: left;
+        margin: left;
+        border-radius: 50%;
+        cursor: pointer;
+        background: red;
+        margin-left: 10px;
+    }
+    </style>
+    <body>
+     <!-- <main> -->
+        <ul class="btn">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    <!-- </main> -->
+    <script type="text/javascript">
+    let btn=document.getElementsByClassName('btn');
+    let li=btn[0].getElementsByTagName('li');
+    // console.log(li)
+    for (var i = li.length - 1; i >= 0; i--) {
+      li[i].style.background="blue"
+           
+    };
+
+    </script>
+    </body>
+</html>

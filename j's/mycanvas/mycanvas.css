@@ -1,0 +1,97 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	
+}
+html,body{
+	width: 100%;
+	height: 100%;
+}
+
+.left{
+	width: 160px;
+	height: 668px;
+	float: left;
+	border-right: 2px solid #ffff;
+	background: #eee
+}
+.left>ul{
+	width: 100%;
+	height: 400px;
+	margin-top: 80px;
+	border-top: 2px solid #fff;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.left>ul>li{
+	width: 70px;
+	height: 70px;
+	border: 2px solid #fff;
+	text-align: center;
+	margin-top: 2px;
+	line-height: 70px;
+}
+.left>ul>li[active=true]{
+	border: 2px solid #00eddd;
+}
+.right{
+	overflow: hidden;
+	height: 80px;
+	border-bottom: 2px solid #ffff;
+	background: #eee;
+}
+.right>ul{
+	width: 500px;
+	height: 80px;
+	display: flex;
+
+	border-left: 2px solid #fff;
+	justify-content: space-around;
+
+}
+.right>ul>li{
+	width: 80px;
+	height: 80px;
+	border: 2px solid #fff;
+	margin-left: 5px;
+	text-align: center;
+	line-height: 80px;
+
+}
+canvas{
+	border: 2px solid #666;
+}
+.box{
+	overflow: hidden;
+	position: relative;
+}	
+.mask{
+	width: 1180px;
+	height: 580px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.xiangpi{
+	width: 20px;
+	height: 20px;
+	border: 1px solid #364895;
+	box-sizing: border-box;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+}
+input{
+	width: 30px;
+	height: 30px;
+	outline: none;
+	border: none;
+
+}
+.clips{
+	border: 1px solid #000;
+	display: none;
+}

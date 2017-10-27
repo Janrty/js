@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>天猫</title>
+        <script type="text/javascript" src="js/rem.js"></script>
+    </head>
+    <body>
+     <script type="text/javascript">
+     // function phone(color,price,size){
+     //    this.color=color,
+     //    this.price=price,
+     //    this.size=size,
+     //    this.guangga=function(){
+     //        alert("hi I am iPhone8")
+     //    }
+     // } 
+     // var iphone8=new phone("red",6888,"5.8");
+     // var iphone8=new phone("pink",8888,"4.7");
+     // console.log(iphone8);
+    //  for(let i in iphone8){
+    //     console.log(i +':'+ iphone8[i])
+    //  }
+
+    //  let zhangshan={}
+    //  alert(zhangshan.constructor);
+  
+    
+    //  let wangwu={};
+    //     wangwu.age=18,
+    //     wangwu.sex="nan",
+    //     wangwu.name="lishi",
+    //     wangwu.say=function(){
+    //       alert("hi I am wangwu")
+    //     }
+     
+    // console.log(wangwu)
+
+    //  let lishi={
+    //     "age":18,
+    //     "sex":"nan",
+    //     "name":"lishi",
+    //     say:function(){
+    //       alert("hi I am lishi")
+    //     }
+    //  }
+
+    //  console.log(lishi);，、
+
+     // class Student{
+     //    constructor(){
+     //        this.name="zhangshan",
+     //        this.age=18,
+     //        this.say=function(){
+     //            alert('你好')
+     //        }
+     //    }
+     //    study(){
+     //        alert("学习")
+     //    }
+     // }
+     // let zhangshan=new Student();
+     // console.log(zhangshan)
+
+    // let arr=new myArray(1,2,3,4,"a")
+    // let arr1=arr.indexOf(1);
+    // function myArray(){
+    //    for(let i=0;i<arguments.length;i++){
+    //     this[i]=arguments[i]
+    //    }
+    //    this.length=arguments.length
+    //    this.push=function(){
+    //     for(let i=0;i<arguments.length;i++){
+    //     this[this.length]=arguments[i];
+    //     this.length++
+    //    }
+       
+
+      //   this.indexof=function(value){
+      //  for(let i=0;i<this.length;i++){
+      //   if(this[i]==value){
+      //       return i
+      //   }
+      //  }return -1
+      // }
+    //    this.IndexOf=function(value){
+    //     for(let i=0;i<this.length;i++){
+    //         if(this[i]==value){
+    //             return i;
+    //         }
+    //     }
+    //     return -1;
+    // }
+    // };
+
+    // IndexOf 某一元素首次出现的位置  找到返回下标，否则为-1.
+    // this.IndexOf=function(value){
+    //     for(let i=0;i<this.length;i++){
+    //         if(this[i]==value){
+    //             return i;
+    //         }
+    //     }
+    //     return -1;
+    // }
+    
+    // console.log(arr);
+    // console.log(arr1);
+
+
+
+//     let arr = new myArray('a',1,'b',2,'c',1,2,3);
+// console.log(arr);
+// // arr.push(4,5,6);
+// console.log(arr.IndexOf('a'));
+// console.log(arr.lastIndextOf(2));
+// console.log(arr.includes(2))
+
+function myArray(){
+    for(let i=0;i<arguments.length;i++){
+        this[i]=arguments[i];
+    }
+    this.length=arguments.length;
+
+// push  添加元素
+    this.push=function(){
+        for (let i=0;i<arguments.length;i++){
+            this[this.length]=arguments[i];
+            this.length++;
+        }
+    }
+
+// IndexOf 某一元素首次出现的位置  找到返回下标，否则为-1.
+    this.IndexOf=function(value){
+        for(let i=0;i<this.length;i++){
+            if(this[i]==value){
+                return i;
+            }
+        }
+        return -1;
+    }
+// lastIndextOf  某一元素最后出现的位置
+    this.lastIndextOf=function(value){
+        for(let i=this.length;i>=0;i--){
+            if(this[i]==value){
+                return i;
+            }
+        }
+        return -1;
+    }
+    // includes是否存在 存在返回true，否则false;
+        this.includes=function(str){
+            for(let i=0;i<this.length;i++){
+                if(str==arguments[i]){
+                    return 1;
+                }
+            }return -1
+    }
+        this.map=function(fn){
+            let newarr=new myArray()
+           for(let i=0;i<this.length;i++){
+         newarr.push(fn(this[i],i,this))
+           } 
+           return newarr
+        }
+
+ }
+
+    let arr=new myArray(4,5,6,7,8,9)
+    let newarr=arr.map(function(value,index,obj){
+       return  value*index
+    })
+   console.log(newarr);
+   
+
+
+  
+
+     </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百分比</title>
+</head>
+<style>
+	canvas{
+		border: 1px solid red;
+	}
+</style>
+<body>
+	<canvas width="300" height="300"></canvas>
+</body>
+</html>
+<script>
+	let canvas=document.querySelector('canvas');
+	let ctx=canvas.getContext("2d");
+	const PI=Math.PI;	
+	let n=1;
+	// requestAnimationFrame()//根据电脑刷新频率执行时间函数	
+	let t;
+	fn();
+	function fn(){
+		n++;
+		if(n==80){
+			cancelAnimationFrame(t);//清除
+		}else{
+			t=requestAnimationFrame(fn);//根据电脑刷新频率执行时间函数
+		}
+		ctx.clearRect(0,0, 300,300);//清除上一次画板中的内容
+		let end=n*(2*PI/100);//百分之n对应的弧度
+		ctx.lineWidth=10;//设置线宽
+		ctx.lineCap='round';//设置线端点为圆的
+		ctx.font='30px sans-serif';
+		ctx.textAlign='center';
+		ctx.textBaseLine='center';
+		ctx.fillText(`${n}%`,150,150);
+		ctx.beginPath();
+		ctx.arc(150,150,100,-0.5*PI,end-0.5*PI,false);
+		ctx.stroke();
+	}
+</script>

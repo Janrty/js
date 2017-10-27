@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+
+    </head>
+    <body>
+    <canvas width="600" height="600"></canvas>
+
+    <script type="text/javascript">
+    let canvas=document.querySelector("canvas");
+    let ctx=canvas.getContext('2d');
+//    ctx.beginPath();
+//    ctx.moveTo(100,100);
+//    ctx.lineTo(50,150);
+//    ctx.lineTo(100,200);
+//    ctx.lineTo(150,150);
+//    ctx.closePath();
+//    ctx.fill();
+
+
+    play(5)
+    function play(n) {
+        let rad=Math.PI*2 / n;
+        ctx.beginPath();
+        ctx.moveTo(400,400);
+        for( let i=0;i<=n;i++){
+            let x=400+150*Math.cos(rad*i);
+            let y=400+150*Math.sin(rad*i);
+            ctx.lineTo(x,y);
+        }
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    </script>
+
+    
+    </body>
+
+</html>

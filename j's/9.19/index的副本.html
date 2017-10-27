@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <link rel="stylesheet" href="css/index.css">；
+        <link rel="stylesheet" type="js/rem.js" href="">
+        <script type="rem.js"></script>
+    </head>
+    <body>
+        <div class="box box1"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+     <script type="text/javascript">
+        function getClass(classname){
+            if(document.getElementsByClassName){
+                return document.getElementsByClassName(classname)
+            }else{
+                var newarr=[];
+                var all=document.getElementsByTagName("*");
+                for(var i=0;i<all.length;i++){
+                    if(checkclass(all[i].className,classname)){
+                         newarr.push(all[i])
+                }
+          }return arr;
+        }
+    }
+        // console.log(getClass("box"))
+
+
+
+// function getElementsByClassName(tag,className) {
+//         var tag = document.getElementsByTagName(tag);
+//         console.log(tag);
+//         var newarr= [];
+//         for(var i = 0 ; i<tag.length ; i++){
+//             if(tag[i].className.indexOf(className) != -1){
+//                 newarr[newarr.length] = tag[i];
+//             }
+//         }
+ 
+//         return newarr;
+ 
+//     }
+
+
+function checkclass(className,classname){
+    var arr=className.split("");
+    for(var i=0;i<arr.length;i++){
+        if(arr[i]==classname){
+            return true;
+        }
+    }return false;
+}
+   checkclass("div,box")
+   // console.log(arr)
+     </script>
+     <script type="text/javascript">
+     window.onload=function(){
+        var box=getClass("box,");
+        for(var i=0;i<box.length;i++){
+            box[i].innerHTML="这是一个div"
+        }
+     }
+     </script>
+  
+    </body>
+</html>

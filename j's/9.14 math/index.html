@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>天猫</title>
+        <script type="text/javascript" src="js/rem.js"></script>
+    </head>
+    <body>
+     <script type="text/javascript">
+     console.log(Math.abs(-10));
+     console.log(Math.abs(-40));
+     console.log(Math.round(-40.5));
+     console.log(Math.round(-0.45));
+     console.log(Math.ceil(-40.5));
+     console.log(Math.floor(-40.5));
+     console.log(Math.random());
+
+
+     // let arr =["a","b","c","d","e"];
+     // function shange(arr,num){
+     //    let arr1=[];
+     //    // let str=Math.floor(Math.random()*arr.length);
+     //    for (let i=0;i<num;i++){
+     //    let str=Math.floor(Math.random()*arr.length);
+     //    while(arr1.includes(arr[str])){
+     //        str=Math.floor(Math.random()*arr.length);
+     //    }
+     //    arr1.push(arr[str]);
+     // };
+     //   return arr1;
+     // }
+     // console.log(shange(arr,5));
+
+
+     let arr =["a","b","c","d","e"];
+     function shange(arr,num){
+        let arr1=[];
+        // let str=Math.floor(Math.random()*arr.length);
+        for (let i=0;i<num;i++){
+        let str=Math.floor(Math.random()*arr.length);
+        if(arr1.includes(arr[str])){
+           i--
+        }else{
+        arr1.push(arr[str]);
+       }
+     };
+       return arr1;
+     }
+     console.log(shange(arr,5));
+
+
+     </script>
+    </body>
+</html>
